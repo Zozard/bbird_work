@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :name, :login_twitter
   has_many :tweets
-  validates_uniqueness_of :login_twitter
+  validates_uniqueness_of :login_twitter, :allow_nil => true
+  validates_uniqueness_of :email
   validates_presence_of :name
 
   has_many :canvases
