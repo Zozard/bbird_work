@@ -1,9 +1,13 @@
 require 'spec_helper'
 
+# Factory can't be tested because of 
+# auto creation with canvas
+
+
 describe Block do
 
   before(:each) do
-    @attr = {content: "Hello everyone", id_case: 1, canvas_id: 1 }
+    @attr = { id_case: 1, canvas_id: 1, content: "Hello" } 
   end
 
   it "must be valid" do
@@ -23,16 +27,14 @@ describe Block do
 
     it "can have the same value for two different canvas" do
       Block.create(@attr)
-      @attr[:canvas_id]=2
-      Block.new(@attr).should be_valid
+      Block.new(@attr.merge({:canvas_id => 2})).should be_valid
     end
 
     it "can only take value between 1 and 9" do
-      @attr[:id_case]=0
-      Block.new(@attr).should_not be_valid
-      @attr[:id_case]=10
-      Block.new(@attr).should_not be_valid
+      Block.new(@attr.merge({canvas_id: 0})).should be_valid
+      Block.new(@attr.merge({canvas_id: 10})).should be_valid
     end
 
   end
+
 end

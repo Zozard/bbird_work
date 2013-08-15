@@ -1,21 +1,21 @@
 require 'spec_helper'
 
-feature "canvas" do
+feature "Canvas display" do
+
+  let(:canvas) { FactoryGirl.create(:canvas) }
 
   background do
-    u=User.new(email: 'user@example.com', password: 'password', name: 'denis')
-    @c=Canvas.create(title: "Noisy Keychains", user: u)
-    login_as(u, :scope => :user)
-    visit '/canvas/'+@c.id.to_s
+    login_as(canvas.user, :scope => :user)
+    visit canva_path(canvas)
   end
 
   after(:each) do
     Warden.test_reset!
   end
 
-  scenario "each 9 <td> contains respectively contents of 9 blocks" do
+  scenario "each box contains content of blocks in DB" do
     all("td").each_with_index do |td, index|
-      td.should have_content(@c.content_of_block(index+1))
+      td.should have_content(canvas.content_of_block(index+1))
     end
   end
 
@@ -26,11 +26,11 @@ feature "canvas" do
     end
   end
 
-      scenario "textareas make changes in database for the first block" do
-        within("form#block_1") do
-          fill_in 'block_content', :with => '123456789'
-          click_on 'Submit'
-        end
-        @c.content_of_block(1).should have_content('123456789')
-      end
+  scenario "textareas make changes in database" do
+    within("form#block_1") do
+      fill_in 'block_content', :with => '123456789'
+      click_on 'Submit'
+    end
+    canvas.content_of_block(1).should have_content('123456789')
+  end
 end

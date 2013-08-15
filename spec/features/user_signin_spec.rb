@@ -1,30 +1,28 @@
 require 'spec_helper'
 
-describe "Successful sign in redirects to /canvas", :type => :feature do
-
-  before :each do
-    @u=User.create(email: 'user@example.com', password: 'password', name: 'denis')
-  end
-
-  it "signs me in" do
-    visit '/users/sign_in'
+feature "Signin in " do
+  
+  let(:user) { FactoryGirl.create(:user) }
+  
+  scenario "redirects to canvas after successful identification" do
+    visit new_user_session_path 
     within("form#new_user.new_user") do
-      fill_in 'user_email', :with => 'user@example.com'
-      fill_in 'Password', :with => 'password'
+      fill_in 'user_email', :with => user.email 
+      fill_in 'Password', :with => user.password
     end
     click_on 'Sign in'
-    current_path.should == '/canvas'
+    current_path.should == canvas_path 
   end
 
-  it "home#index redirects users signed in to /canvas" do
-    login_as(@u, :scope => :user)
-    visit '/'
-    current_path.should == '/canvas'
+  it "redirects identified users to canvas" do
+    login_as(user, :scope => :user)
+    visit root_path 
+    current_path.should == canvas_path
   end
 
-  it "canvas#index is not accessible if not signed in" do
-    visit '/canvas'
-    current_path.should == '/users/sign_in'
+  it "canvas can't be accessed to visitors" do
+    visit canvas_path 
+    current_path.should == new_user_session_path
   end
 
 end
