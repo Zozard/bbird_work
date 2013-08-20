@@ -2,15 +2,23 @@ tr.fifty {
   th, td{
     width: 50%;
   }
+  img{
+    width: 8%;
+    float: right;
+  }
 }
 tr.twenty {
   th, td{
     width: 20%;
   }
+  img{
+    width: 20%;
+    float: right;
+  }
 }
 
 body{
-height: 100%;
+  height: 100%;
 
 }
 
@@ -23,7 +31,7 @@ height: 100%;
     border-bottom: 1px solid;
     border-top: none;
     textarea {
-    resize: none;
+      resize: none;
     }
   }
   th{
