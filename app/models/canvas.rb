@@ -1,5 +1,5 @@
 class Canvas < ActiveRecord::Base
-  attr_accessible :title, :user
+  attr_accessible :title, :user, :hashtag
 
   belongs_to :user
   has_many :blocks

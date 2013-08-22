@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20130809131144) do
   create_table "canvas", :force => true do |t|
     t.string   "title"
     t.integer  "user_id"
+    t.string   "hashtag"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
