@@ -4,6 +4,8 @@ class CreateTweets < ActiveRecord::Migration
       t.string :text
       t.integer :id_twitter
       t.integer :user_id
+      t.integer :canvas_id
+      t.integer :id_case
 
       t.timestamps
     end

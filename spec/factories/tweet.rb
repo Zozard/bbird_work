@@ -3,6 +3,7 @@ FactoryGirl.define do
     sequence :id_twitter do |dynamic_id|
      dynamic_id 
     end
+    canvas
     user
   end
 end

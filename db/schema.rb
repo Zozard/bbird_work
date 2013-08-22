@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(:version => 20130809131144) do
     t.string   "text"
     t.integer  "id_twitter"
     t.integer  "user_id"
+    t.integer  "canvas_id"
+    t.integer  "id_case"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

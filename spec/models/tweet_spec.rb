@@ -10,7 +10,13 @@ describe Tweet do
 
   describe "#user" do
     it "is present" do
-      FactoryGirl.build(:tweet, user: nil)
+      FactoryGirl.build(:tweet, user: nil).should_not be_valid
+    end
+  end
+
+  describe "#canvas" do
+    it "is present" do
+      FactoryGirl.build(:tweet, canvas_id: nil).should_not be_valid
     end
   end
 

@@ -1,8 +1,11 @@
 class Tweet < ActiveRecord::Base
-  attr_accessible :id_twitter, :text, :user
+  attr_accessible :id_twitter, :text, :user, :canvas_id, :id_case
 
   validates_uniqueness_of :id_twitter
   validates_presence_of :id_twitter
+
+  belongs_to :canvas
+  validates_presence_of :canvas_id
 
   belongs_to :user
   validates_presence_of :user
