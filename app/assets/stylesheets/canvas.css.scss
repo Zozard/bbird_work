@@ -10,25 +10,26 @@ tr.twenty {
 }
 
 body{
-height: 100%;
+  height: 100%;
 
 }
 
 .canvas{
   height: 100%;
-  width: 100%;
+  width: 80%;
   td {
     border-left: 1px solid;
     border-right: 1px solid;
     border-bottom: 1px solid;
     border-top: none;
     textarea {
-    resize: none;
+      resize: none;
     }
   }
   th{
     border-left: 1px solid;
     border-top: 1px solid;
+    border-right: 1px solid;
     border-bottom: none;
     p{
       font-size: 200%;
@@ -36,5 +37,12 @@ height: 100%;
   }
   img.icone{
     height: 40%;
+  }
+}
+
+.wrapper{
+  width: 100%;
+  td {
+    width: 50%;
   }
 }

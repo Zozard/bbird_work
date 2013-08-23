@@ -49,4 +49,5 @@ gem 'capybara'
 gem 'selenium-webdriver'
 gem 'database_cleaner', '< 1.1.0'
 gem "factory_girl_rails", "~> 4.0"
+gem 'jquery-ui-rails'
 

@@ -1,9 +1,17 @@
-<section class="round">
-<% @tweets.each do |tweet| %>
-  <dl> 
-    <%= image_tag("mushroom.png", :alt => "Avatar", :class => "pull-left") %>
-    <dt><%=tweet.user.name%></dt>
-    <dd><%=tweet.text%></dd>
-  </dl>
-<% end %>
-</section>
+<div id="basket" >
+  <%= image_tag("twitter.png", :alt => "Twitter", :size => "50x50", :class => "pull-left") %>
+  <h2>Tweets about this</h2>
+  <div class="tweets">
+    <section class="round">
+    <% @tweets.each do |tweet| %>
+      <div class="draggable" id="<%= dom_id(Tweet.find(tweet.id)) %>">
+        <dl> 
+          <%= image_tag("mushroom.png", :alt => "Avatar", :class => "pull-left") %>
+          <dt><%=tweet.user.name %></dt>
+          <dd><%=tweet.text%></dd>
+        </dl>
+      </div>
+    <% end %>
+    </section>
+  </div>
+</div>

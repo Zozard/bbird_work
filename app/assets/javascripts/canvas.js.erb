@@ -1,0 +1,19 @@
+$('.edit_block').children('textarea').on('focusout', function(){
+  block_id=$(this).parent().attr('id');
+  document.getElementById(block_id).submit();
+});
+
+$('.edit_block').hide();
+
+$('div.draggable').draggable({helper: 'clone'});
+
+$('td.block').droppable(
+    {
+      tolerance: 'pointer',
+  drop: function(event, ui){
+    console.log($(ui.draggable).attr('id'));
+    console.log($(this)[0].children[0]); /* ça marche pas parce que le form est putain de hidden mais sinon ça doit être bon */
+  }
+    }
+    );
+

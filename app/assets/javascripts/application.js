@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require twitter/bootstrap
 //= require_tree .
 $(document).ready(function(){
   $('.edit_block input').hide();
 });
+

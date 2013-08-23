@@ -1,51 +1,60 @@
 <body >
-  <table class="table canvas" cellspacing=0 >
-    <tr class="twenty">
-      <th colspan=2>KP</th>
-      <th colspan=2>KA</th>
-      <th colspan=2>VP</th>
-      <th colspan=2>CR</th>
-      <th colspan=2>CS</th>
-    </tr>
-    <tr class="twenty" >
-      <td rowspan=3 colspan=2 >
-        <%= render @blocks[0]  %>
+  <table class="wrapper" >
+    <tr>
+      <td>
+        <%= render :partial => 'tweets/tweets' %>
       </td>
-      <td colspan=2> 
-        <%= render @blocks[1]  %>
-      </td>
-      <td rowspan=3 colspan=2>
-        <%= render @blocks[2]  %>
-      </td>
-      <td colspan=2>
-        <%= render @blocks[3]  %>
-      </td>
-      <td rowspan=3 colspan=2>
-        <%= render @blocks[4]  %>
-      </td>
-    </tr>
-    <tr class="twenty" >
-      <th colspan=2>KR</th>
-      <th colspan=2>CH</th>
-    </tr>
-    <tr class="twenty" >
-      <td colspan=2>
-        <%= render @blocks[5]  %>
-      </td>
-      <td colspan=2>
-        <%= render @blocks[6]  %>
-      </td>
-    </tr>
-    <tr class="fifty">
-      <th colspan=5>C$</th>
-      <th colspan=5>RS</th>
-    </tr>
-    <tr class="fifty" >
-      <td colspan=5>
-        <%= render @blocks[7]  %>
-      </td>
-      <td colspan=5>
-        <%= render @blocks[8]  %>
+      <td>
+        <table class="table canvas" cellspacing=0 >
+          <tr class="twenty">
+            <th colspan=2>KP</th>
+            <th colspan=2>KA</th>
+            <th colspan=2>VP</th>
+            <th colspan=2>CR</th>
+            <th colspan=2>CS</th>
+          </tr>
+          <tr class="twenty" >
+            <td class= "block" rowspan=3 colspan=2 >
+              <%= render @blocks[0]  %>
+            </td>
+            <td class= "block" colspan=2> 
+              <%= render @blocks[1]  %>
+            </td>
+            <td class= "block" rowspan=3 colspan=2>
+              <%= render @blocks[2]  %>
+            </td>
+            <td class= "block" colspan=2>
+              <%= render @blocks[3]  %>
+            </td>
+            <td class= "block" rowspan=3 colspan=2>
+              <%= render @blocks[4]  %>
+            </td>
+          </tr>
+          <tr class="twenty" >
+            <th colspan=2>KR</th>
+            <th colspan=2>CH</th>
+          </tr>
+          <tr class="twenty" >
+            <td class= "block" colspan=2>
+              <%= render @blocks[5]  %>
+            </td>
+            <td class= "block" colspan=2>
+              <%= render @blocks[6]  %>
+            </td>
+          </tr>
+          <tr class="fifty">
+            <th colspan=5>C$</th>
+            <th colspan=5>RS</th>
+          </tr>
+          <tr class="fifty" >
+            <td class= "block" colspan=5>
+              <%= render @blocks[7]  %>
+            </td>
+            <td class= "block" colspan=5>
+              <%= render @blocks[8]  %>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
   </table>
