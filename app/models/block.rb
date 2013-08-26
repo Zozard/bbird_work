@@ -8,4 +8,5 @@ class Block < ActiveRecord::Base
   validates_inclusion_of :id_case, :in => 1..9
 
   belongs_to :canvas
+
 end

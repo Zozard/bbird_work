@@ -4,10 +4,17 @@
   <div class="tweets">
     <section class="round">
     <% @tweets.each do |tweet| %>
+
+     <% blocks=TweetToBlock.where(tweet_id: tweet.id).map { |block| block.id_case } %>
+
       <div class="draggable" id="<%= dom_id(Tweet.find(tweet.id)) %>">
         <dl> 
-          <%= image_tag("mushroom.png", :alt => "Avatar", :class => "pull-left") %>
-          <dt><%=tweet.user.name %></dt>
+          <%= image_tag("mushroom.png", :alt => "Avatar", :class => "pull-left") %>   
+          <dt><%=tweet.user.name %>
+              <% blocks.each do |block| %>
+                <%= block %>
+              <% end %>
+          </dt>
           <dd><%=tweet.text%></dd>
         </dl>
       </div>
