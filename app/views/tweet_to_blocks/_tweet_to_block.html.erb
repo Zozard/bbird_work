@@ -1,0 +1,5 @@
+<%= form_tag "/tweet_to_blocks", :id => "tweet_to_block_"+id_case do -%>
+  <%= hidden_field_tag "id_case", id_case %>
+  <%= hidden_field_tag :tweet_id, :value => nil %>
+<% end %>
+

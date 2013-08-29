@@ -7,7 +7,8 @@ Tweetag::Application.routes.draw do
   resources :tweets, :only => [:index]
   resources :canvas, :only => [:index, :show]
   resources :users, :only => [:index]
-  resources :blocks
+  resources :blocks, :only => [:update]
+  resources :tweet_to_blocks, :only => [:create]
 
   match 'user_root' => 'canvas#index', as: :user_root
 

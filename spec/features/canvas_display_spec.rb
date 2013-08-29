@@ -43,7 +43,7 @@ feature "Tweets drag and drop" do
 
   before(:each) do 
     FactoryGirl.create(:tweet, canvas_id: canvas.id)
-    FactoryGirl.create(:tweet, canvas_id: canvas.id)
+    @tweet=FactoryGirl.create(:tweet, canvas_id: canvas.id)
   end
 
   background do
@@ -69,8 +69,11 @@ feature "Tweets drag and drop" do
     end
   end
 
-  scenario "dropped tweets have an associated id_case"do
-    pending 
+  scenario "dropped tweets have an associated id_case", :js => true do
+    draggable=page.find("#tweet_"+@tweet.id.to_s)
+    droppable=page.find("#block_1")
+    draggable.drag_to droppable
+    TweetToBlock.where(tweet_id: @tweet.id, id_case: 1).should_not be_empty
   end
 
 end

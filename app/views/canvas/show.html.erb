@@ -16,6 +16,7 @@
           <tr class="twenty" >
             <td class= "block" rowspan=3 colspan=2 >
               <%= render @blocks[0]  %>
+              <%= render :partial => '/tweet_to_blocks/tweet_to_block', :locals => {:id_case => "1" } %>
             </td>
             <td class= "block" colspan=2> 
               <%= render @blocks[1]  %>

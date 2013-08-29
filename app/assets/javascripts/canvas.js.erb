@@ -3,7 +3,7 @@ $('.edit_block').children('textarea').on('focusout', function(){
   document.getElementById(block_id).submit();
 });
 
-$('.edit_block').hide();
+//$('.edit_block').hide();
 
 $('div.draggable').draggable({helper: 'clone'});
 
@@ -11,9 +11,9 @@ $('td.block').droppable(
     {
       tolerance: 'pointer',
   drop: function(event, ui){
-    tweet_id=$(ui.draggable).attr('id');
-    id_case=$(this)[0].children[0].id; 
-    <% Tweet.associate_block(tweet_id, id_case) %>
+    var tweet_id=$(ui.draggable).attr('id');
+    var id_case=$(this)[0].children[1].id;
+    <% #impossible Tweet.associate_block(tweet_id, id_case) %>
   }
     }
     );

@@ -31,8 +31,8 @@ describe Block do
     end
 
     it "can only take value between 1 and 9" do
-      Block.new(@attr.merge({canvas_id: 0})).should be_valid
-      Block.new(@attr.merge({canvas_id: 10})).should be_valid
+      Block.new(@attr.merge({id_case: 0})).should_not be_valid
+      Block.new(@attr.merge({id_case: 10})).should_not be_valid
     end
 
   end
