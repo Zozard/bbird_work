@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130826100007) do
+ActiveRecord::Schema.define(:version => 20130829204743) do
 
   create_table "blocks", :force => true do |t|
     t.text     "content"
@@ -21,17 +21,15 @@ ActiveRecord::Schema.define(:version => 20130826100007) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "blocks_tweets", :force => true do |t|
+    t.integer "tweet_id"
+    t.integer "block_id"
+  end
+
   create_table "canvas", :force => true do |t|
     t.string   "title"
     t.integer  "user_id"
     t.string   "hashtag"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "tweet_to_blocks", :force => true do |t|
-    t.integer  "tweet_id"
-    t.integer  "id_case"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

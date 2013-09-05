@@ -16,6 +16,6 @@
 //= require twitter/bootstrap
 //= require_tree .
 $(document).ready(function(){
-  $('.edit_block input').hide();
+  //$('.edit_block input').hide();
 });
 

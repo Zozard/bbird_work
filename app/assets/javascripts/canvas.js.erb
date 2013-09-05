@@ -11,9 +11,9 @@ $('td.block').droppable(
     {
       tolerance: 'pointer',
   drop: function(event, ui){
-    var tweet_id=$(ui.draggable).attr('id');
-    var id_case=$(this)[0].children[1].id;
-    <% #impossible Tweet.associate_block(tweet_id, id_case) %>
+    var tweet_id=$(ui.draggable).attr('id'); // tweet_1
+    var block=$(this)[0].children[1].id; // tweet_block_1
+     
   }
     }
     );

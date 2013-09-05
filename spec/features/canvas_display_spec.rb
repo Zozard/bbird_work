@@ -73,7 +73,7 @@ feature "Tweets drag and drop" do
     draggable=page.find("#tweet_"+@tweet.id.to_s)
     droppable=page.find("#block_1")
     draggable.drag_to droppable
-    TweetToBlock.where(tweet_id: @tweet.id, id_case: 1).should_not be_empty
+    Tweet.find(@tweet.id).blocks.should include(Block.where(canvas_id: canvas.id, id_case: 1))
   end
 
 end

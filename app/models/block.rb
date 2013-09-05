@@ -7,6 +7,8 @@ class Block < ActiveRecord::Base
 
   validates_inclusion_of :id_case, :in => 1..9
 
+  has_and_belongs_to_many :tweets
+
   belongs_to :canvas
 
 end

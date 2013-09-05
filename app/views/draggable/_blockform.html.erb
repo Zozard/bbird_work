@@ -1,0 +1,5 @@
+<%= form_for block, :html => { :id => "tweet_block_"+block.id_case.to_s}, :url => { :action => 'update', :controller => 'draggable', :block_id => block.id }  do |f| %>
+  <%= hidden_field_tag :tweet_id, 1  %>
+  <%= f.submit "Submit", class: "save" %>
+<% end %>
+
